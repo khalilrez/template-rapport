@@ -1,0 +1,95 @@
+\chapter{Nom Chapitre}
+\chaptermark{Nom Chapitre}
+\section{Titre}
+    \subsection{Sous-Titre}
+        \subsubsection{Sous-Sous-Titre}
+            
+
+
+Une Figure
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.4\textwidth]{figures/dockerlogo.png}
+  \caption{Logo Docker.}
+  \label{fig:docker}
+\end{figure}
+
+\paragraph{Isolation et Portabilité avec Docker} % Titre de paragraphe
+Docker est un outil de virtualisation légère basée sur des conteneurs, ce qui signifie que nous pouvons isoler efficacement nos applications et leurs dépendances. Cette isolation garantit que chaque composant de notre application fonctionne de manière prévisible, sans interférence avec les autres. De plus, les conteneurs Docker sont hautement portables, ce qui signifie que nous pouvons les exécuter de manière cohérente sur différents environnements, que ce soit sur nos machines de développement, nos serveurs de test ou nos serveurs de production.
+
+
+\clearpage
+Un tableau
+\begin{table}[h]
+    \centering
+    \small  % Reduce font size
+    \begin{tabularx}{\textwidth}{|X|X|}
+    \hline
+    \textbf{Titre} & S'authentifier \\
+    \hline
+        \textbf{Acteur} & Client \\
+    \hline
+        \multicolumn{2}{|X|}{\textbf{Description d'enchainement}}\\
+    \hline
+        \textbf{Pré-condition} & Client inscrit \\
+    \hline
+    \multicolumn{2}{|X|}{\textbf{Scénario nominal}}\\
+    \hline
+    \multicolumn{2}{|X|}{  % Use X columns for multiline content
+        \begin{itemize}[left=0pt]
+            \item L'utilisateur saisit son login et password
+            \item Soumette la requête d'authentification
+            \item Le système vérifie le compte
+            \item Si les informations sont correctes, on affiche la page de OTP
+            \item Le client saisit le code
+            \item Si le code est correct, le client a accès
+        \end{itemize}
+    } \\
+    \hline
+    \multicolumn{2}{|X|}{\textbf{Erreur possible}}\\
+    \hline
+    \multicolumn{2}{|X|}{Compte n'existe pas, password incorrecte , code OTP incorrect}\\
+    \hline
+    \textbf{Post-condition} & Client authentifié \\
+    \hline
+    \end{tabularx}
+        \caption{Description textuelle du diagramme de cas d'utilisation s'authentifier}
+    \label{tab:usecase}
+\end{table}
+
+\clearpage
+un bout de code
+\begin{mycode}[caption=Deployment MySQL]
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: mysql-amen-deployment
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: mysql-amen
+      template:
+        metadata:
+          labels:
+            app: mysql-amen
+        spec:
+          containers:
+            - name: mysql-amen-container
+              image: mysql:latest
+              env:
+                - name: MYSQL_ROOT_PASSWORD
+                  value: root
+                - name: MYSQL_USER
+                  value: amen
+                - name: MYSQL_PASSWORD
+                  value: amen
+                - name: MYSQL_DATABASE
+                  value: amen
+    
+    \end{mycode}
+
+
+\section*{Conclusion}
+\addcontentsline{toc}{section}{Conclusion}
+texte de conclusion
