@@ -3,6 +3,7 @@
 \usepackage{graphicx}
 \graphicspath{{images/}}
 \usepackage{wrapfig}
+\usepackage{silence}
 \usepackage[absolute]{textpos}
 \usepackage{adjustbox}
 \usepackage{tabularx}
@@ -17,6 +18,7 @@
 \usepackage{pdfpages}
 \usepackage{longtable}
 \usepackage{abstract}
+\usepackage{minitoc}
 \usepackage[french]{babel}
 \usepackage[autolanguage]{numprint}
 \usepackage{lmodern} % Font package that supports T1 encoding
@@ -26,6 +28,14 @@
 \usepackage{enumitem}
 \usepackage{tabularx}  % For better control of table width
 \usepackage{listings}
+
+%SUPPRESS WARNINGS
+\WarningFilter{minitoc(hints)}{W0099}
+\WarningFilter{minitoc(hints)}{W0030}
+\WarningFilter{minitoc(hints)}{W0023}
+\WarningFilter{minitoc(hints)}{W0028}
+\WarningFilter{minitoc(hints)}{W0024}
+%END SUPPRESS
 
 \setlength{\headheight}{15pt}
 \pagestyle{fancy}
